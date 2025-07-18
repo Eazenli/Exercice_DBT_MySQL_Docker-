@@ -1,4 +1,4 @@
-# 🏗️ Projet Data Warehouse — dojo_dbt_w12
+# 🏗️ Projet Data Warehouse — dojo_dbt_w12 (Explication pédagogique)
 
 ## 🧾 Description du dépôt
 Projet pédagogique de data warehouse local avec **Docker**, **MySQL**, **DBT** et **Python**.
@@ -78,13 +78,13 @@ Cela :
 - crée des vues ou des tables transformées à partir des données brutes
 
 ## 🧱 Architecture du projet
-.
-├── docker-compose.yml
-├── Dockerfile
-├── connect_mysql.py
-├── dojo_dbt_w12/         ← projet DBT (models, seeds, dbt_project.yml, etc.)
-├── docker_profiles/      ← contient le profiles.yml pour DBT
-├── CSV/    ← dossier local avec les fichiers .csv
+. \
+├── docker-compose.yml \
+├── Dockerfile \
+├── connect_mysql.py \
+├── dojo_dbt_w12/         ← projet DBT (models, seeds, dbt_project.yml, etc.) \
+├── docker_profiles/      ← contient le profiles.yml pour DBT \
+├── CSV/    ← dossier local avec les fichiers .csv 
 
 ## 📦 Volumes persistants
 Le volume mysql_data est déclaré comme persistant :
