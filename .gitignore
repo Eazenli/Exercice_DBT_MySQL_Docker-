@@ -1,0 +1,7 @@
+.venv
+logs
+__pycache__/
+*.pyc
+*.pyo
+*.log
+docker_profiles/profiles.yml

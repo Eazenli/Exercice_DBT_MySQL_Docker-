@@ -1,0 +1,8 @@
+dbt-core
+dbt-mysql
+pandas
+pymysql
+sqlalchemy
+sqlalchemy_utils
+cryptography
+protobuf==4.23.4

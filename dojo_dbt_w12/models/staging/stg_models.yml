@@ -1,0 +1,185 @@
+version: 2
+
+models:
+  - name: stg_customer
+    columns:
+      - name: CustomerID
+        tests:
+          - not_null
+          - unique
+      - name: PersonID
+
+
+
+  - name: stg_person
+    columns:
+      - name: BusinessEntityID
+        description: "Idem que PersonID"
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_customer')
+              field: PersonID
+      - name: FirstName
+      - name: LastName
+      - name: BirthDate
+      - name: MaritalStatus
+      - name: YearlyIncome
+      - name: Gender
+      - name: TotalChildren
+      - name: Education
+      - name: Occupation
+      - name: HomeOwnerFlag
+      - name: NumberCarsOwned
+
+
+
+  - name: stg_product
+    columns:
+      - name: ProductKey
+        description: "Unique identifier for each product"
+        test:
+          - not_null
+          - unique 
+          - relationships:
+              to: ref('stg_productdescription')
+              field: ProductDescriptionID
+      - name: ProductName
+      - name: ProductNumber
+      - name: ProductColor
+      - name: ProductSize 
+      - name: ProduCost
+      - name: ProductPrice
+      - name: ProductSubcategoryID
+        description: clé étrangère vers table ProductSubCategory
+      - name: ProductModelID
+        description: clé étrangère vers table ProductModel 
+
+
+
+  - name: stg_productdescription
+    columns:
+      - name: ProductDescriptionID
+        tests:
+          - not_null
+          - unique
+      - name: ProductDescription  
+
+
+
+  - name: stg_productmodel
+    columns:
+      - name: ProductModelID
+        tests:
+          - not_null
+          - unique 
+          - relationships:
+              to: ref('stg_product')
+              field: ProductModelID
+      - name: ProductModelName
+
+
+
+
+  - name : stg_productcategory
+    columns:
+      - name: ProductCategoryKey
+        description: Clé unique de la catégorie du product 
+        tests: 
+          - not_null
+          - unique
+      - name: ProductCategorylName
+
+
+
+
+  - name: stg_productsubcategory
+    columns: 
+      - name: ProductSubCategoryKey
+        tests:
+          - not_null
+          - unique 
+          - relationships:
+              to: ref('stg_product')
+              field: ProductSubCategoryID
+      - name: ProductCategoryID
+        description: clé étrangère vers la table ProductCategory 
+        tests:
+          - not_null 
+          - relationships:
+              to: ref('stg_productcategory')
+              field: ProductCategoryKey
+      - name: ProductSubCategorylName
+
+
+
+  - name: stg_salesterritory
+    description: Table sur les endroits de vente 
+    columns:
+      - name: TerritoryKey
+        description: clé primaire sur le territoire 
+        tests:
+          - not_null
+          - unique
+          
+      - name: Region
+        description: Les régions d'un pays 
+
+      - name: CountryRegionCode
+        description: acronyme du pays 
+        tests:
+          - relationships:
+              to: ref('stg_countryregion')
+              field: CountryRegionCode
+      - name: Continent
+
+
+
+  - name: stg_countryregion
+    description: Table de dimension sur les pays et leur acronyme
+    columns:
+      - name: CountryRegionCode
+        description: acronyme du pays, clé unique 
+        tests:
+          - not_null
+          - unique 
+      - name: Country
+
+
+
+  - name: stg_salesorderheader
+    description: Table des en-têtes de commandes
+    columns:
+      - name: SalesOrderKey
+        description: Clé unique de la commande
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_salesorderdetail')
+              field: SalesOrderID
+
+      - name: SalesOrderNumber
+        description: Numéro de la commande
+        
+      - name: OrderDate
+      - name: CustomerKey
+        description: clé étrangère, lié avec la table Customer
+      - name: TerritoryKey
+        description: clé étrangère, lié avec la table Territory
+
+
+
+  - name: stg_salesorderdetail
+    description: Table des lignes de commandes
+    columns:
+      - name: SalesOrderID
+        description: Identifiant de la commande (clé étrangère vers stg_salesorderheader)
+        tests:
+          - not_null
+
+      - name: OrderQty
+        description: Quantité commandée
+      
+      - name: ProductID

@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "joined customer data and person data"
+    columns:
+      - name: CustomerID
+      - name: PersonID
+      - name: FirstName
+      - name: LastName
+      - name: BirthDate
+      - name: MaritalStatus
+      - name: YearlyIncome
+      - name: Gender
+      - name: TotalChildren
+      - name: Education
+      - name: Occupation
+      - name: HomeOwnerFlag
+      - name: NumberCarsOwned
+
+  - name: dim_product
+    description: table de dimension sur les products 
+    columns:
+      - name: ProductKey
+      - name: ProductSubCategoryKey
+        description: Clé étrangère vers la table ProductSubCategory
+      - name: ProductNumber
+      - name: ProductName
+      - name: ProductModelName
+      - name: ProductDescription
+      - name: ProductColor
+      - name: ProductSize
+      - name: ProduCost
+      - name: ProductPrice
+
+
+  - name: dim_productsubcategory
+    columns:
+      - name: ProductSubcategoryKey
+      - name: ProductCategoryKey
+      - name: ProductSubCategoryName
+      - name: ProductCategoryName
+
+
+  - name: dim_territory
+    columns:
+      - name: TerritoryKey
+      - name: Region
+      - name: Country
+      - name: Continent

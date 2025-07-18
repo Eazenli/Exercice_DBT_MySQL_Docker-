@@ -1,0 +1,11 @@
+# docker_profiles/profiles-template.yml
+dojo_dbt_w12:
+  target: dev
+  outputs:
+    dev:
+      type: mysql
+      server: mysql
+      user: root
+      password: le mot de passe ici 
+      schema: dojo_dbt_w12
+      port: 3306

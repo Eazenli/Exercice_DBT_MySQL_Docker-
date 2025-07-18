@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: dojo_dbt_w12
+    schema: dojo_dbt_w12
+
+    tables:
+      - name: raw_countryregion
+      - name: raw_customer
+      - name: raw_person
+      - name: raw_product
+      - name: raw_productcategory
+      - name: raw_productdescription
+      - name: raw_productmodel
+      - name: raw_productmodelproductdescriptionculture
+      - name: raw_productsubcategory
+      - name: raw_salesorderdetail
+      - name: raw_salesorderheader
+      - name: raw_salesterritory
+

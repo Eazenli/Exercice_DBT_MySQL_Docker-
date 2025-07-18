@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fact_sales 
+    description: 
+      Table de fait des ventes issues des commandes clients, 
+      avec clés vers les dimensions produit, client, territoire et date
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - SalesOrderKey
+            - ProductID
+            - CustomerKey
+            - TerritoryKey
+    columns:
+      - name: SalesOrderKey
+      - name: SalesOrderNumber
+      - name: ProductID
+        description: Clé vers table de dimension Product 
+      - name: CustomerKey
+        description: Clé vers table de dimension Customer
+      - name: TerritoryKey
+        description: Clé vers table de dimension Territory
+      - name: OrderDate
+      - name: OrderQty
