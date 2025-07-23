@@ -1,4 +1,4 @@
-# 🏗️ Projet Data Warehouse — dojo_dbt_w12 (Explication pédagogique)
+# Projet Data Warehouse — dojo_dbt_w12 (Explication pédagogique)
 
 ## 🧾 Description du dépôt
 Projet pédagogique de data warehouse local avec **Docker**, **MySQL**, **DBT** et **Python**.
@@ -126,5 +126,5 @@ docker volume rm nom_du_volume
 ## Vérifier l’état de la base de données
 
 ```bash
-docker-compose exec mysql mysql -uroot -pwcs2025 -e "SHOW DATABASES;"
+docker-compose exec mysql mysql -uroot -p(passwordhere) -e "SHOW DATABASES;"
 ````
