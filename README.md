@@ -1,7 +1,7 @@
-# Projet Data Warehouse — dojo_dbt_w12 (Explication pédagogique)
+# Projet Data Warehouse — suite du dojo_dbt_w12 (fichier explicatif et pédagogique)
 
 ## 🧾 Description du dépôt
-Projet pédagogique de data warehouse local avec **Docker**, **MySQL**, **DBT** et **Python**.
+Projet de data warehouse local avec **Docker**, **MySQL**, **DBT** et **Python**.
 L'objectif est de construire une chaîne complète de traitement analytique :
 
 - Import de fichiers CSV dans une base MySQL Dockerisée
