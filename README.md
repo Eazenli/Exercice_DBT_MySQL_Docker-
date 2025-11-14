@@ -1,6 +1,6 @@
 # Projet Data Warehouse — suite du dojo_dbt_w12 (fichier explicatif et pédagogique)
 
-## 🧾 Description du dépôt
+## Description du dépôt
 Projet de data warehouse local avec **Docker**, **MySQL**, **DBT** et **Python**.
 L'objectif est de construire une chaîne complète de traitement analytique :
 
@@ -12,7 +12,7 @@ L'objectif est de construire une chaîne complète de traitement analytique :
 
 ---
 
-## ⚙️ Technologies utilisées
+## Technologies utilisées
 
 | Composant | Description |
 |----------|-------------|
@@ -24,7 +24,7 @@ L'objectif est de construire une chaîne complète de traitement analytique :
 
 ---
 
-## 🔐 Configuration DBT
+## Configuration DBT
 
 Le fichier `profiles.yml` contenant vos identifiants MySQL ne doit **jamais** être poussé dans GitHub.  
 À la place, utilisez un fichier `profiles-template.yml` pour guider la configuration.
@@ -35,7 +35,7 @@ Une fois le projet cloné :
 cp docker_profiles/profiles-template.yml docker_profiles/profiles.yml
 ```
 
-## 🚀 Workflow du projet
+## Workflow du projet
 
 ### 1. Démarrage de l’environnement
 
@@ -77,7 +77,7 @@ Cela :
 
 - crée des vues ou des tables transformées à partir des données brutes
 
-## 🧱 Architecture du projet
+## Architecture du projet
 . \
 ├── docker-compose.yml \
 ├── Dockerfile \
@@ -86,7 +86,7 @@ Cela :
 ├── docker_profiles/      ← contient le profiles.yml pour DBT \
 ├── CSV/    ← dossier local avec les fichiers .csv 
 
-## 📦 Volumes persistants
+## Volumes persistants
 Le volume mysql_data est déclaré comme persistant :
 
 ```yaml
@@ -109,7 +109,7 @@ Et pour supprimer un volume inutile :
 ```bash
 docker volume rm nom_du_volume
 ```
-## 🐳 Notions importantes sur Docker
+## Notions importantes sur Docker
 
 | Terme             | Signification                                                                           |
 |-------------------|------------------------------------------------------------------------------------------|
