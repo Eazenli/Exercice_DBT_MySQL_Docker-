@@ -1,4 +1,4 @@
-# Projet Data Warehouse — suite du dojo_dbt_w12 (fichier explicatif et pédagogique)
+# Projet Data Warehouse avec DBT
 
 ## Description du dépôt
 Projet de data warehouse local avec **Docker**, **MySQL**, **DBT** et **Python**.
@@ -109,7 +109,7 @@ Et pour supprimer un volume inutile :
 ```bash
 docker volume rm nom_du_volume
 ```
-## Notions importantes sur Docker
+## Notions importantes sur Docker (pour moi)
 
 | Terme             | Signification                                                                           |
 |-------------------|------------------------------------------------------------------------------------------|
