@@ -26,7 +26,7 @@ L'objectif est de construire une chaîne complète de traitement analytique :
 
 ## Configuration DBT
 
-Le fichier `profiles.yml` contenant vos identifiants MySQL ne doit **jamais** être poussé dans GitHub.  
+Le fichier `profiles.yml` contenant les identifiants MySQL ne doit **jamais** être poussé dans GitHub.  
 À la place, utilisez un fichier `profiles-template.yml` pour guider la configuration.
 
 Une fois le projet cloné :
@@ -42,7 +42,7 @@ cp docker_profiles/profiles-template.yml docker_profiles/profiles.yml
 ```bash
 docker-compose up --build -d
 ```
-Cela :
+Cela permet:
 
 - (re)construit les images personnalisées 
 
@@ -55,7 +55,7 @@ Cela :
 ```bash
 docker-compose run importer
 ```
-Cela :
+Cela permet :
 
 - exécute le script connect_mysql.py, qui :
 
